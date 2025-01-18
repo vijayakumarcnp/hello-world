@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.10.0 on win32)" generated="2025-01-18T06:06:42.530787" rpa="false" schemaversion="5">
+<suite id="s1" name="YahooFinTest" source="c:\Users\admin\Documents\hello-world\.venv\Scripts\YahooFinTest.robot">
+<test id="s1-t1" name="Verification of the Autosuggest value" line="19">
+<kw name="Open Browser To Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-18T06:06:43.215470" level="INFO">Opening browser 'Chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-18T06:06:43.215470" elapsed="50.522075"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-18T06:07:33.737545" elapsed="0.474141"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-18T06:07:34.446353" level="INFO">Page title is 'Yahoo Finance - Stock Market Live, Quotes, Business &amp; Finance News'.</msg>
+<arg>Yahoo Finance - Stock Market Live, Quotes, Business &amp; Finance News</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-01-18T06:07:34.211686" elapsed="0.235665"/>
+</kw>
+<status status="PASS" start="2025-01-18T06:06:43.215470" elapsed="51.232878"/>
+</kw>
+<kw name="Verify Autosuggest">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-18T06:07:34.488503" level="INFO">Typing text 'TSLA' into text field '//*[@id="ybar-sbq"]'.</msg>
+<arg>//*[@id="ybar-sbq"]</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-18T06:07:34.485864" elapsed="1.031396"/>
+</kw>
+<kw name="List Should Contain Value" owner="Collections">
+<msg time="2025-01-18T06:07:35.517260" level="FAIL">Keyword 'Collections.List Should Contain Value' expected 2 to 4 arguments, got 1.</msg>
+<arg>TESLA Inc.</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="FAIL" start="2025-01-18T06:07:35.517260" elapsed="0.000000">Keyword 'Collections.List Should Contain Value' expected 2 to 4 arguments, got 1.</status>
+</kw>
+<arg>TSLA</arg>
+<status status="FAIL" start="2025-01-18T06:07:34.483868" elapsed="1.033392">Keyword 'Collections.List Should Contain Value' expected 2 to 4 arguments, got 1.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-18T06:07:35.603279" elapsed="2.913360"/>
+</kw>
+<status status="FAIL" start="2025-01-18T06:06:43.203827" elapsed="55.312812">Keyword 'Collections.List Should Contain Value' expected 2 to 4 arguments, got 1.</status>
+</test>
+<status status="FAIL" start="2025-01-18T06:06:42.544746" elapsed="55.971893"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="YahooFinTest" id="s1" pass="0" fail="1" skip="0">YahooFinTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
